@@ -1,0 +1,29 @@
+
+<div class="w3-content w3-display-container" style=" display:inline-block;">
+  <a href="/user/signin">
+  <img class="mySlides" src="http://misc.newdress.com/nap/images/images_common/nd_fhj_banner20160317s.jpg" style="width:153%;">
+  <img class="mySlides" src="http://misc.newdress.com/nap/images/images_common/nd_fhj_banner20160317ss.jpg" style="width:151%">
+  <img class="mySlides" src="http://bloomingtrenz.com/wp-content/uploads/2018/05/Dress-banner-Bloomingtrenz.jpg" style="width:174%">
+  <img class="mySlides" src="https://storage.sg.content-cdn.io/in-resources/a8698a90-ed16-4a3a-a06d-0aca1ae1e4b1/Images/userimages/garden_western_dress_banner.jpg" style="width:157%">
+</a>
+  <!--<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>-->
+  </div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+</script>
