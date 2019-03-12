@@ -79,7 +79,7 @@ router.get("/user/signup", function(req, res) {
 
 router.get('/user/account',function(req,res){
     if(req.session.user) {
-        res.render('user/account',{title: "Personal Details"})
+        res.render('user/account',{title: "please fill your personal details"})
           }
           else {
               res.redirect('/dashboard');
