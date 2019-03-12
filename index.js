@@ -1,7 +1,5 @@
 const path = require('path');
 const expressHbs = require('express-handlebars');
-const cookieParser = require('cookie-parser');
-const csrf = require('csurf');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -10,11 +8,12 @@ const auth = require('./routes/auth');
 const users = require('./routes/users');
 const cart = require('./routes/cart');
 const account = require('./routes/account');
+const config = require('config');
 
-//if(!config.get('jwtPrivateKey')){
-//    console.error('FATAL ERROR: jwtPrivateKey is not defined');
-  //  process.exit(1);
-//}
+if(config.get('jwtPrivateKey')){
+    console.error('FATAL ERROR: jwtPrivateKey is not defined');
+    process.exit(1);
+}
 
 
 app.use(bodyParser.json());
