@@ -1,8 +1,11 @@
-<br/>
-{{# each account }}
+<br />
+<div class="container">
 
-Name:{{name}}<br/>
-Phone:{{phone}}
 
-{{/each}}
-
+    {{# each session}}
+    <strong>
+       {{name}}<br/>
+         {{email}}
+        </strong>
+    {{/each}}
+</div>

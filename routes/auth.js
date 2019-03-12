@@ -43,7 +43,6 @@ router.use(
 router.use((req, res, next) => {
   res.locals.login = req.session.user;
   res.locals.session = req.session;
-  res.locals.account = req.session.account;
   next();
 });
 
@@ -117,6 +116,7 @@ router.get("/dashboard", async (req, res) => {
       }
       res.render("user/profile", { products: productChunks });
     });
+
   } else {
     res.redirect("/");
   }
@@ -174,7 +174,19 @@ router.get('/checkout', (req,res,next) => {
     var cart = new Cart(req.session.cart)
     res.render('user/checkout', {total: cart.totalPrice});
   }
-})
+});
+
+router.get('/success', (req,res,next) => {
+  if(!req.session.cart) {
+    return res.redirect(req.session.cart);
+  }
+  else
+  {
+    var cart = new Cart(req.session.cart)
+    req.session.cart = null; 
+    res.render('user/success', {success: 'Your order has been placed successfully!'});
+  }
+});
 
 router.get("/logout", (req, res) => {
   if (req.session.user && req.cookies.user_sid) {

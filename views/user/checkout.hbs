@@ -4,7 +4,7 @@
         <h1>Checkout</h1>
         <h4>Your Total: ${{total}}</h4>
         <div id="charge-error" class="alert alert-danger {{#if noError}}hidden{{/if}}">
-            {{errMsg}}
+            {{success}}
         </div>
         <form action="/checkout" method="post" id="checkout-form">
             <div class="row">
@@ -51,13 +51,13 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="card-cvc">CVC</label>
+                        <label for="card-cvc">CVV</label>
                         <input type="text" id="card-cvc" class="form-control" required>
                     </div>
                 </div>
             </div>
             <a href="/dashboard" class="btn btn-danger pull-left">Cancel</a>
-            <button type="submit" class="btn btn-success pull-right">Buy now</button>
+            <a href="/success" class="btn btn-success pull-right">Buy now</a>
         </form>
     </div>
 </div>
