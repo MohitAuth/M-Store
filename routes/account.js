@@ -11,7 +11,7 @@ router.post('/', async(req,res) => {
     if(error) return res.status(400).send(error.details[0].message); 
 
    let account = await Account.findOne({phone:req.body.phone});
-   if(account) return res.status(400).render('user/account', {error:'Details of this account has already saved'});
+   if(account) return res.status(400).render('user/account', {error:'Details of this account were already saved'});
  
 
      account = new Account(_.pick(req.body,['phone','address','state','city','code']));
